@@ -58,7 +58,7 @@ if(isset($message)){
       echo '
       <div class="message">
          <span>'.$message.'</span>
-         <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
+         <i class="fa-regular fa-circle-xmark" onclick="this.parentElement.remove();"></i>
       </div>
       ';
    }
@@ -68,7 +68,7 @@ if(isset($message)){
     
 <section class="form-container">
     <form action="" method="post">
-        <h3>Register now</h3>
+        <h3>Register Account</h3>
         <input type="text" name="name" class="box" placeholder="enter your username" required>
         <input type="email" name="email" class="box" placeholder="enter your email" required>
         <input type="password" name="password" class="box" placeholder="enter your password" required>
