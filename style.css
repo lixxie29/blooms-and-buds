@@ -198,3 +198,7 @@ section{
       font-size: 50%;
    }
 }
+
+.error-message{
+   color: var(--red);
+}

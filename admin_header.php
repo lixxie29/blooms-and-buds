@@ -18,6 +18,7 @@ if(isset($message)){
         <a href="admin_page.php" class="logo">Admin <span>Panel</span> </a>
 
         <nav class="navbar">
+            <!-- <a href="admin_page.php"> cock and balls and cock</a> -->
             <a href="admin_page.php">home</a>
             <a href="admin_products.php">products</a>
             <a href="admin_orders.php">orders</a>

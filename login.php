@@ -76,7 +76,7 @@ if(isset($message)){
 ?>
 
     
-<section class="form-container">
+<!-- <section class="form-container">
     <form action="" method="post">
         <h3>Login</h3>
         <input type="email" name="email" class="box" placeholder="enter your email" required>
@@ -84,7 +84,21 @@ if(isset($message)){
         <input type="submit" class="btn" name="submit" value="login">
         <p>don't have an account? <a href="register.php">register now</a></p>
     </form>
+</section> -->
+
+<section class="form-container">
+    <form id="loginForm" action="" method="post" onsubmit="return validateLoginForm()">
+        <h3>Login</h3>
+        <input type="email" id="email" name="email" class="box" placeholder="enter your email">
+        <span id="emailError" class="error-message"></span>
+        <input type="password" id="password" name="password" class="box" placeholder="enter your password">
+        <span id="passwordError" class="error-message"></span>
+        <input type="submit" class="btn" name="submit" value="login">
+        <p>Don't have an account? <a href="register.php">Register now</a></p>
+    </form>
 </section>
+
+<script src="login_validation.js"></script>
 
 </body>
 </html>
