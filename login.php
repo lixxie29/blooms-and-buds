@@ -58,6 +58,9 @@ if(isset($_POST['submit'])){
    <!-- custom css file link  -->
    <link rel="stylesheet" href="style.css">
 
+   <!-- include the JavaScript validation file -->
+   <script src="login_validation.js"></script>
+   
 </head>
 <body>
 
@@ -98,7 +101,6 @@ if(isset($message)){
     </form>
 </section>
 
-<script src="login_validation.js"></script>
 
 </body>
 </html>

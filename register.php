@@ -25,7 +25,7 @@ if(isset($_POST['submit'])){
         if($password != $cpassword){
             $message[] = 'passwords do not match';
         }else{
-        mysqli_query($conn, "INSERT INTO `users`(name, email, password) VALUES('$name', '$email', '$password')") or die('query failed');
+         mysqli_query($conn, "INSERT INTO `users`(name, email, password) VALUES('$name', '$email', '$password')") or die('query failed');
          $message[] = 'registered successfully!';
          header('location:login.php');
         }
@@ -47,6 +47,9 @@ if(isset($_POST['submit'])){
 
    <!-- custom css file link  -->
    <link rel="stylesheet" href="style.css">
+
+   <!-- include the JavaScript validation file -->
+   <script src="register_validation.js"></script>
 
 </head>
 <body>

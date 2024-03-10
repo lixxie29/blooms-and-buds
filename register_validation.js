@@ -18,16 +18,26 @@ function isValidPassword(password) {
     }
 }
 
-// Function to validate login form
-function validateLoginForm() {
+// Function to validate registration form
+function validateRegistrationForm() {
     // Get form fields
+    var name = document.getElementById('name').value;
     var email = document.getElementById('email').value;
     var password = document.getElementById('password').value;
+    var cpassword = document.getElementById('cpassword').value;
     var isValid = true;
 
     // Reset error messages
+    document.getElementById('nameError').textContent = '';
     document.getElementById('emailError').textContent = '';
     document.getElementById('passwordError').textContent = '';
+    document.getElementById('cpasswordError').textContent = '';
+
+    // Name validation
+    if (name.trim() === '') {
+        document.getElementById('nameError').textContent = 'Please enter your username.';
+        isValid = false;
+    }
 
     // Email validation
     if (email.trim() === '') {
@@ -44,6 +54,15 @@ function validateLoginForm() {
         isValid = false;
     } else if (!isValidPassword(password)) {
         document.getElementById('passwordError').textContent = 'Password must contain at least one number and at least one capital letter.';
+        isValid = false;
+    }
+
+    // Confirm password validation
+    if (cpassword.trim() === '') {
+        document.getElementById('cpasswordError').textContent = 'Please confirm your password.';
+        isValid = false;
+    } else if (password !== cpassword) {
+        document.getElementById('cpasswordError').textContent = 'Passwords do not match.';
         isValid = false;
     }
 
