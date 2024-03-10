@@ -10,6 +10,38 @@ if(!isset($admin_id)){
     header('location:login.php');
 };
 
+ if(isset($_POST['add_product'])){
+
+    // passing input through the mysqli_real_escape_string() function, any special characters that could be used to launch an SQL injection attack are neutralized, making the query safer and more secure.
+
+    $name = mysqli_real_escape_string($conn, $_POST['name']);
+    $price = mysqli_real_escape_string($conn, $_POST['price']);
+    $details = mysqli_real_escape_string($conn, $_POST['details']);
+    $image = $_FILES['image']['name'];
+    $image_size = $_FILES['image']['size'];
+    $image_tmp_name = $_FILES['image']['tmp_name'];
+    $image_folder = 'uploaded_img/'.$image;
+
+    $select_product_name = mysqli_query($conn, "SELECT name FROM `products` WHERE name = '$name'") or die('query failed');
+
+    if(mysqli_num_rows($select_product_name) > 0)
+    {
+        $message[] = 'product name already exists';
+    }
+    else{
+        $insert_product = mysqli_query($conn, "INSERT INTO `products`(name, details, price, image) VALUES('$name', '$details', '$price', '$image')") or die('query failed');
+
+        if($insert_product){
+            if($image_size > 2000000){
+                $message[] = 'image size is too large!';
+            }else{
+                move_uploaded_file($image_tmp_name, $image_folder);
+                $message[] = 'product added successfully!';
+            }
+        }
+    }
+ }
+
 ?>
 
 <!DOCTYPE html>
