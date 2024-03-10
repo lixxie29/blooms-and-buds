@@ -13,8 +13,12 @@ if(isset($_POST['submit'])){
     $email = mysqli_real_escape_string($conn, $filter_email);
     $filter_password = filter_var($_POST['password'], FILTER_SANITIZE_STRING);  
     $password = mysqli_real_escape_string($conn, md5($filter_password));
+    // $password = mysqli_real_escape_string($conn, $filter_password);
     $filter_cpassword = filter_var($_POST['cpassword'],FILTER_SANITIZE_STRING);  
     $cpassword = mysqli_real_escape_string($conn, md5($filter_cpassword));
+    // $cpassword = mysqli_real_escape_string($conn, $filter_cpassword);
+
+
 
     $select_users = mysqli_query($conn, "SELECT * FROM `users` WHERE email = '$email'") or die('query failed');
 
@@ -69,13 +73,29 @@ if(isset($message)){
 ?>
 
     
-<section class="form-container">
+<!-- <section class="form-container">
     <form action="" method="post">
         <h3>Register Account</h3>
         <input type="text" name="name" class="box" placeholder="enter your username" required>
         <input type="email" name="email" class="box" placeholder="enter your email" required>
         <input type="password" name="password" class="box" placeholder="enter your password" required>
         <input type="password" name="cpassword" class="box" placeholder="confirm your password" required>
+        <input type="submit" class="btn" name="submit" value="register">
+        <p>already registered? <a href="login.php">login now</a></p>
+    </form>
+</section> -->
+
+<section class="form-container">
+    <form action="" method="post" onsubmit="return validateRegistrationForm()">
+        <h3>Register Account</h3>
+        <input type="text" id="name" name="name" class="box" placeholder="enter your username" required>
+        <span id="nameError" class="error-message"></span>
+        <input type="email" id="email" name="email" class="box" placeholder="enter your email" required>
+        <span id="emailError" class="error-message"></span>
+        <input type="password" id="password" name="password" class="box" placeholder="enter your password" required>
+        <span id="passwordError" class="error-message"></span>
+        <input type="password" id="cpassword" name="cpassword" class="box" placeholder="confirm your password" required>
+        <span id="cpasswordError" class="error-message"></span>
         <input type="submit" class="btn" name="submit" value="register">
         <p>already registered? <a href="login.php">login now</a></p>
     </form>

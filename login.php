@@ -60,7 +60,7 @@ if(isset($_POST['submit'])){
 
    <!-- include the JavaScript validation file -->
    <script src="login_validation.js"></script>
-   
+
 </head>
 <body>
 
