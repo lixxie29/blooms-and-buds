@@ -42,6 +42,8 @@ if(!isset($admin_id)){
     }
  }
 
+
+
 ?>
 
 <!DOCTYPE html>
@@ -74,6 +76,33 @@ if(!isset($admin_id)){
         <input type="file" accept="image/jpg, image/jpeg, image/png" required class="box" name="image">
         <input type="submit" value="add product" name="add_product" class="btn">
     </form>
+
+</section>
+
+<section class="show-products">
+
+    <div class="box-container">
+
+        <?php
+         $select_products = mysqli_query($conn, "SELECT * FROM `products`") or die('query failed');
+         if(mysqli_num_rows($select_products) > 0){
+            while($fetch_products = mysqli_fetch_assoc($select_products)){
+        ?>
+        
+        <div class="box">
+            <div class="price">$<?php echo $fetch_products['price']; ?>/-</div>
+            <img class="image" src="uploaded_img/<?php echo $fetch_products['image']; ?>" alt="">
+            <div class="name"><?php echo $fetch_products['name']; ?></div>
+            <div class="details"><?php echo $fetch_products['details']; ?></div>
+            
+        </div>
+
+
+        <?php
+            }
+        }
+        ?>
+    </div>
 
 </section>
 
