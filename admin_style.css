@@ -348,7 +348,7 @@ html{
 }
 
 .show-products .box-container .box .image{
-   height: 25rem;
+   height: 27rem;
    margin-bottom: .5rem;
 }
 
@@ -373,6 +373,7 @@ html{
    color: var(--light-color);
    font-size: 1.4rem;
    padding: .5rem 0;
+   margin-bottom: 1rem;
 }
 
 
