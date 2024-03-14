@@ -20,10 +20,10 @@ if(isset($_POST['add_product'])){
     $image = $_FILES['image']['name'];
     $image_size = $_FILES['image']['size'];
     $image_tmp_name = $_FILES['image']['tmp_name'];
-    $image_folder = 'images/'.basename($_FILES['image']['name']);
-    $path = "/Applications/XAMPP/xamppfiles/htdocs/project/Flower-Store-Website/images";
+    //$image_folder = 'images/'.basename($_FILES['image']['name']);
+    //$path = "/Applications/XAMPP/xamppfiles/htdocs/project/Flower-Store-Website/images";
     //$image_folder = __DIR__ . "/uploaded_img/" . $image;
-    // $image_folder = "/project/Flower-Store-Website/uploaded_img".$image;
+    $image_folder = "/project/Flower-Store-Website/uploaded_img".$image;
     // $image_folder = realpath(dirname(__FILE__)) . '/uploaded_img/' . $image;
     //$image_folder = "http://localhost/project/Flower-Store-Website/uploaded_img/".$image;
 
@@ -43,11 +43,11 @@ if(isset($_POST['add_product'])){
 
         if($insert_product) {
             if($image_size > 2000000) {
-                $message[] = 'Image size is too large';
+                $message[] = 'image size is too large';
             } else{
                 move_uploaded_file($_FILES["image"]["tmp_name"], $image_folder);
                 //copy($_FILES['image']['tmp_name'], $path);
-                $message[] = 'Product added successfully';
+                $message[] = 'product added successfully';
             }
         }
     }
