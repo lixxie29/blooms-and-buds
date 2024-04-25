@@ -181,6 +181,11 @@ section{
    text-decoration: underline;
 }
 
+.error-message{
+   color: var(--red);
+}
+
+
 
 
 
@@ -199,6 +204,3 @@ section{
    }
 }
 
-.error-message{
-   color: var(--red);
-}

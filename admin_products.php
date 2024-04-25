@@ -17,17 +17,10 @@ if(isset($_POST['add_product'])){
     $name = mysqli_real_escape_string($conn, $_POST['name']);
     $price = mysqli_real_escape_string($conn, $_POST['price']);
     $details = mysqli_real_escape_string($conn, $_POST['details']);
-    $image = $_FILES['image']['name'];
-    $image_size = $_FILES['image']['size'];
-    $image_tmp_name = $_FILES['image']['tmp_name'];
-    //$image_folder = 'images/'.basename($_FILES['image']['name']);
-    //$path = "/Applications/XAMPP/xamppfiles/htdocs/project/Flower-Store-Website/images";
-    //$image_folder = __DIR__ . "/uploaded_img/" . $image;
-    $image_folder = "/project/Flower-Store-Website/uploaded_img".$image;
-    // $image_folder = realpath(dirname(__FILE__)) . '/uploaded_img/' . $image;
-    //$image_folder = "http://localhost/project/Flower-Store-Website/uploaded_img/".$image;
-
-
+    $image = $_FILES['image'];
+    // $image_size = $_FILES['image']['size'];
+    // $image_tmp_name = $_FILES['image']['tmp_name'];
+    // $image_folder = "/project/Flower-Store-Website/uploaded_img".$image;
 
     $select_product_name_query = "SELECT name FROM `products` WHERE name = '$name'";
     $select_product_name = mysqli_query($conn, $select_product_name_query) or die('query failed');
@@ -41,36 +34,35 @@ if(isset($_POST['add_product'])){
         $insert_product_query = "INSERT INTO `products` (name, details, price, image) VALUES ('$name', '$details', '$price', '$image')";
         $insert_product = mysqli_query($conn, $insert_product_query) or die('query failed');
 
-        if($insert_product) {
-            if($image_size > 2000000) {
-                $message[] = 'image size is too large';
-            } else{
-                move_uploaded_file($_FILES["image"]["tmp_name"], $image_folder);
-                //copy($_FILES['image']['tmp_name'], $path);
-                $message[] = 'product added successfully';
-            }
-        }
-    }
-    // else{
-    //     $insert_product = mysqli_query($conn, "INSERT INTO `products`(name, details, price, image) VALUES('$name', '$details', '$price', '$image')") or die('query failed');
+            if($insert_product) {
+            // if($image_size > 2000000) {
+            //     $message[] = 'image size is too large';
+            // } else{
+            //     move_uploaded_file($_FILES["image"]["tmp_name"], $image_folder);
+            //     $message[] = 'product added successfully';
+            // }
 
-    //     if($insert_product){
-    //         if($image_size > 2000000){
-    //             $message[] = 'image size is too large';
-    //         }else{
-    //             $file_name_new = uniqid('',true) . '.jpg';
-    //             $file_name_destination = 'uploaded_img/' . $file_name_new;
-    //             if( copy($_FILES['image']['tmp_name'], "uploaded_img/")){
-    //                 $message[] = 'product added successfully';
-    //             }
-    //             else{
-    //                 $message[] = 'product not added';
-    //             }
-                
-    //         }
-    //     }
-    // }
-    
+            $time = time(); //used to make each image
+            $image_name = $time . $image['name'];
+            $image_tmp_name = $image['tmp_name'];
+            $image_destination_path = '/project/Flower-Store-Website/images' . $image_name;
+
+            //make sure file is image
+
+            $allowed_files = ['png', 'jpg', 'jpeg'];
+            $image_extension = explode('.', $image_name);
+            $image_extension = end($image_extension);
+            if (in_array($image_extension, $allowed_files)) {
+                //proceed to check size
+                if ($image['size'] < 2000000) {
+                    //upload the image
+                    move_uploaded_file($image_tmp_name, $image_destination_path);
+                    $message[] = 'product added successfully';
+                }
+            }
+            else {$message[] = 'image size is too large';}
+        }
+    }    
  }
 
  if(isset($_GET['delete'])){
@@ -78,9 +70,9 @@ if(isset($_POST['add_product'])){
     $select_delete_image = mysqli_query($conn, "SELECT image FROM `products` WHERE id = '$delete_id' ") or die('query failed');
     $fetch_delete_image = mysqli_fetch_assoc($select_delete_image);
 
-    // if (!empty($fetch_delete_image['image'])) {
-    //     unlink("images/".$fetch_delete_image['image']);
-    // }
+    if (!empty($fetch_delete_image['image'])) {
+        unlink("images/".$fetch_delete_image['image']);
+    }
     mysqli_query($conn, "DELETE FROM `products` WHERE id = '$delete_id'") or die('query failed');
     mysqli_query($conn, "DELETE FROM `wishlist` WHERE pid = '$delete_id'") or die('query failed');
     mysqli_query($conn, "DELETE FROM `cart` WHERE pid = '$delete_id'") or die('query failed');
