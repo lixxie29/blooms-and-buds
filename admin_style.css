@@ -100,6 +100,20 @@ html{
  .message i:hover{
     transform: rotate(90deg);
  }
+
+
+
+ .empty {
+   padding: 1.5rem;
+   font-size: 2rem;
+   color:var(--red);
+   border: var(--border);
+   box-shadow: var(--box-shadow);
+   text-align: center;
+   background-color: var(--white);
+   border-radius: .5rem;
+   
+ }
  
  
  
@@ -314,6 +328,7 @@ footer{
    padding: 2rem;
    text-align: center;
    margin: 0 auto;
+   box-shadow: var(--box-shadow);
 }
 
 .add-products form h3{
@@ -357,11 +372,15 @@ footer{
    box-shadow: var(--box-shadow);
    border-radius: .5rem;
    position: relative;
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
 }
 
 .show-products .box-container .box .image{
    height: 27rem;
    margin-bottom: .5rem;
+
 }
 
 .show-products .box-container .box .price{
@@ -388,6 +407,45 @@ footer{
    margin-bottom: 1rem;
 }
 
+.update-product form{
+   max-width: 50rem;
+   border-radius: .5rem;
+   background-color: var(--white);
+   border: var(--border);
+   padding: 2rem;
+   text-align: center;
+   margin: 0 auto;
+   box-shadow: var(--box-shadow);
+}
+
+.update-product form h3{
+   font-size: 2.5rem;
+   text-transform: uppercase;
+   color: var(--black);
+   margin-bottom: 1rem;
+}
+
+.update-product form .box{
+   width: 100%;
+   margin: 1rem 0;
+   font-size: 1.8rem;
+   color:var(--black);
+   border-radius: .5rem;
+   background-color: var(--light-bg);
+   padding: 1.2rem 1.4rem;
+   border: var(--border);
+}
+
+.update-product form textarea{
+   height: 15rem;
+   resize: none;
+}
+
+.update-product .image{
+   height: 30rem;
+   border: var(--border);
+   border-radius: .75rem;
+}
 
 
 

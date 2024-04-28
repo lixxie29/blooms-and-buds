@@ -25,10 +25,6 @@ if(!isset($admin_id)){
 
     <!-- custom css file link  -->
    <link rel="stylesheet" href="admin_style.css">
-    
-   <!-- include the JavaScript validation file -->
-   <script src="admin_script.js"></script>
-
 
 </head>
 <body>

@@ -40,3 +40,4 @@ if(isset($message)){
     </div>
 
 </header>
+<script src="admin_script.js"></script>
