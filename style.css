@@ -204,3 +204,14 @@ section{
    }
 }
 
+footer {
+   background: var(--light-bg); 
+   color: var(--light-color);
+   text-align: center;
+   padding: 2rem 0;
+   position: relative;
+   bottom: 0;
+   left: 0;
+   width: 100%;
+   margin-top: 1rem;
+}

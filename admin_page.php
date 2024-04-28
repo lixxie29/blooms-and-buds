@@ -24,7 +24,10 @@ if(!isset($admin_id)){
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <!-- custom css file link  -->
-    <link rel="stylesheet" href="admin_style.css">
+   <link rel="stylesheet" href="admin_style.css">
+    
+   <!-- include the JavaScript validation file -->
+   <script src="admin_script.js"></script>
 
 
 </head>
@@ -120,11 +123,9 @@ if(!isset($admin_id)){
 </section>
 
 
-
-
-
-
-<script src="admin_script.js"></script>
+<footer>
+   <p>&copy; 2024 Blooms & Buds Website. All rights reserved.</p>
+</footer>
     
 </body>
 </html>

@@ -102,5 +102,9 @@ if(isset($message)){
 </section>
 
 
+<footer>
+   <p>&copy; 2024 Blooms & Buds Website. All rights reserved.</p>
+</footer>
+
 </body>
 </html>

@@ -3,6 +3,7 @@
 :root{
    --pink:#e84393;
    --light-pink:#eaa5ca;
+   --lighter-pink:#eec5d6;
    --red:#c0392b;
    --orange:#ec6d23;
    --black:#333;
@@ -155,7 +156,7 @@ html{
     position: sticky;
     top: 0;left: 0;right: 0;
     z-index: 1000;
-    background-color: var(--white);
+    background: linear-gradient(to right, var(--lighter-pink), var(--light-bg)); 
     /* background-color: linear-gradient(to right, var(--pink), var(--light-pink)); */
     box-shadow: var(--box-shadow);
  }
@@ -249,6 +250,17 @@ html{
    color: var(--pink);
 }
 
+footer{
+   background: linear-gradient(to right, var(--light-bg), var(--lighter-pink)); 
+   color: var(--light-color);
+   text-align: center;
+   padding: 2rem 0;
+   position: relative;
+   bottom: 0;
+   left: 0;
+   width: 100%;
+   margin-top: 18rem;
+}
 
 
 #menu-btn{
