@@ -525,7 +525,7 @@ footer{
 .users .box-container .box p{
    font-size: 2rem;
    color: var(--light-color);
-   margin-bottom: 1.5rem;
+   margin-bottom: 1rem;
    line-height: 1.5;
 }
 
@@ -537,6 +537,36 @@ footer{
    margin-top: .5;
 }
 
+
+
+.messages .box-container{
+   display: grid;
+   grid-template-columns: repeat(auto-fit, 33rem);
+   gap:1.5rem;
+   align-items: flex-start;
+   max-width: 1200px;
+   margin: 0 auto;
+   justify-content: center;
+}
+
+.messages .box-container .box{
+   padding: 2rem;
+   border: var(--border);
+   background-color: var(--white);
+   box-shadow: var(--box-shadow);
+   border-radius: .5rem;
+}
+
+.messages .box-container .box p{
+   font-size: 2rem;
+   color: var(--light-color);
+   margin-bottom: 1rem;
+   line-height: 1.5;
+}
+
+.messages .box-container .box p span{
+   color: var(--pink);
+}
 
 
 
