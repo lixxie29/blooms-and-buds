@@ -10,9 +10,6 @@ if(!isset($user_id)){
     header('location:login.php');
 }
 
-echo $_SESSION['user_name'];
-echo $_SESSION['user_email'];
-
 ?>
 
 <!DOCTYPE html>
