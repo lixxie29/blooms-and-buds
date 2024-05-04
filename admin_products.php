@@ -119,9 +119,6 @@ if(isset($_POST['add_product'])){
 </section>
 
 <script src="admin_script.js"></script>
-<footer>
-   <p>&copy; 2024 Blooms & Buds Website. All rights reserved.</p>
- </footer>
     
 </body>
 </html>

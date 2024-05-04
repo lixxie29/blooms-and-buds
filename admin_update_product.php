@@ -93,10 +93,6 @@ if(isset($_POST['update_product'])){
 
 </section>
 
-
-<footer>
-   <p>&copy; 2024 Blooms & Buds Website. All rights reserved.</p>
- </footer>
     
 </body>
 </html>
