@@ -330,6 +330,40 @@ section{
    margin-top: .5rem;
 }
 
+.home{
+   min-height: 60vh;
+   background:url(../Flower-Store-Website/images/background.jpeg) no-repeat;
+   background-size: cover;
+   background-position: center;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.home .content{
+   text-align: center;
+}
+
+.home .content h3{
+   text-transform: uppercase;
+   color: var(--black);
+   font-size: 5.5rem;
+}
+
+.home .content p{
+   max-width: 60rem;
+   margin: 1rem auto;
+   line-height: 1.5;
+   font-size: 1.7rem;
+   color: var(--light-color);
+}
+
+
+
+
+
+
+
 
 .footer{
    background: linear-gradient(to right, var(--light-bg), var(--lighter-pink)); 
@@ -444,6 +478,10 @@ section{
 
    .header .flex .navbar ul li ul li{
       padding-left: 2rem;
+   }
+
+   .home .content h3{
+      font-size: 3.5rem;
    }
 }
 

@@ -30,7 +30,18 @@ if(!isset($user_id)){
     
 <?php @include 'header.php';?>
 
-
+<section class="home">
+    <div class="content">
+        <h3>new collections</h3>
+        <p>Your premier destination for exquisite artisanal 
+            bouquets and delightful monthly subscription boxes. At Blooms & Buds, we believe 
+            in the power of flowers to brighten your day, elevate your space, and create 
+            unforgettable moments. Our handcrafted bouquets are carefully curated by our 
+            team of expert florists, using only the freshest, highest quality blooms sourced 
+            from local growers and sustainable farms.</p>
+        <a href="about.php" class="btn">discover more</a>
+    </div>
+</section>
 
 
 
