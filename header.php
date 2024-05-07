@@ -22,6 +22,7 @@ if(isset($message)){
                <ul>
                   <li><a href="about.php">about</a></li>
                   <li><a href="contact.php">contact</a></li>
+                  <li><a href="pricing.php">pricing</a></li>
                </ul>
             </li>
             <li><a href="shop.php">shop</a></li>

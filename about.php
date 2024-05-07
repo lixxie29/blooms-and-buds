@@ -156,8 +156,6 @@ if(!isset($user_id)){
 </section>
 
 
-
-
 <?php @include 'footer.php';?>
 <script src="script.js"></script>
 

@@ -780,6 +780,10 @@ section{
    flex-wrap: wrap-reverse;
 }
 
+
+
+
+
 .reviews .box-container{
    max-width: 1200px;
    margin:0 auto;
@@ -833,6 +837,105 @@ section{
    margin-top: 1rem;
 }
 
+
+
+
+
+.contact form{
+   max-width: 50rem;
+   background-color: var(--white);
+   border-radius: .5rem;
+   box-shadow: var(--box-shadow);
+   border: var(--border);
+   text-align: center;
+   padding: 2rem;
+   margin:0 auto;
+}
+
+.contact form h3{
+   font-size: 2.5rem;
+   margin-top: 1rem;
+   color: var(--black);
+}
+
+.contact form .box{
+   width: 100%;
+   border-radius: .5rem;
+   border: var(--border);
+   margin: 1rem 0;
+   padding: 1.2rem 1.4rem;
+   font-size: 1.8rem;
+   color: var(--black);
+   background-color: var(--light-bg);
+}
+
+.contact form textarea{
+   height:15rem;
+   resize: none;
+}
+
+
+
+
+
+
+.pricing-table {
+   margin: 20px auto;
+ }
+
+.pricing-table caption {
+   font-size: 15px;
+   font-weight: bold;
+ }
+
+ 
+table {
+   width: 100%;
+   border-collapse: collapse;
+   margin-top: 1rem;
+ }
+ 
+th, td {
+   padding: 8px;
+   text-align: left;
+   border-bottom: 1px solid #ddd;
+ }
+ 
+th {
+   background-color: #f2f2f2;
+ }
+ 
+tr:nth-child(even) {
+   background-color: #f2f2f2;
+ }
+ 
+tr:hover {
+   background-color: #ddd;
+ }
+ 
+td[colspan] {
+   background-color: #e84393;
+   color: white;
+   text-align: center;
+ }
+ 
+td[rowspan] {
+   background-color: #eaa5ca;
+   color: white;
+   text-align: center;
+ }
+
+.shipping {
+   width: 100%;
+   border-collapse: collapse;
+
+   margin-top: 0;
+}
+
+.shipping-table[colspan] {
+   background-color: transparent;
+   color: #333;
+}
 
 
 
