@@ -510,6 +510,10 @@ section{
    position: relative;
 }
 
+.products .box-container .box.hidden{
+   display: none;
+}
+
 .products .box-container .box .image{
    height:35rem;
    width: 100%;
@@ -809,9 +813,25 @@ section{
 
 }
 
+.reviews .box-container .box .stars{
+   display: inline-block;
+   background: var(--light-bg);
+   border-radius: .5rem;
+   padding: 1rem 1.5rem;
+   border: var(--border);
+}
 
+.reviews .box-container .box .stars i{
+   color: var(--orange);
+   font-size: 1.7rem;
+   margin: 0 .3rem;
+}
 
-
+.reviews .box-container .box h3{
+   font-size: 2rem;
+   color:var(--black);
+   margin-top: 1rem;
+}
 
 
 

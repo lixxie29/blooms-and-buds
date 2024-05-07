@@ -18,24 +18,41 @@ window.onscroll = () =>{
 
 
 
-// Get the modal
+
+// get the modal
 var modal = document.getElementById('myModal');
 
-// Get the image and insert it inside the modal - use its "alt" text as a caption
+// get the image and insert it inside the modal - use its "alt" text as a caption
 var img = document.getElementById('maisy');
 var modalImg = document.getElementById("modal-img");
-var captionText = document.getElementById("caption");
 
+
+if(img !== null){
 img.onclick = function(){
     modal.style.display = "block";
     modalImg.src = this.src;
-    captionText.innerHTML = this.alt;
-}
+}}
 
-// Get the <span> element that closes the modal
+// get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() { 
-    modal.style.display = "none";
+// when the user clicks on <span> (x), close the modal
+if(span){
+    span.onclick = function(){
+        modal.style.display = "none";
+    }
 }
+
+
+
+
+$(document).ready(function(){  
+    $(".box:gt(3)").addClass("hidden");
+    
+    $("#load-button").click(function() {
+        $(".box.hidden").slice(0, 3).removeClass("hidden"); // Show the next 3 hidden posts
+        if ($(".box.hidden").length === 0) {
+            $(this).hide(); // Hide the button when all posts are shown
+        }
+    });
+})
