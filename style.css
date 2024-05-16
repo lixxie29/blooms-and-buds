@@ -414,7 +414,7 @@ section{
    margin: 1rem auto;
    line-height: 1.5;
    font-size: 1.7rem;
-   color: var(--light-color);
+   color: var(--black);
 }
 
 
@@ -728,7 +728,7 @@ section{
 .home-contact .content p{
    line-height: 2;
    font-size: 1.5rem;
-   color: var(--black);
+   color: var(--light-color);
    padding: 1rem 0;
 }
 
