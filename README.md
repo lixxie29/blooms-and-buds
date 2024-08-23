@@ -1,9 +1,17 @@
 # blooms & buds - responsive flower store website
 
 -> created with HTML, CSS, JavaScript, PHP, MySQL
+
+
 -> admin dashboard, with product page and statistics
+
+
 -> multi user login/register system
+
+
 -> contact, about, pricing pages
+
+
 -> product quick view, messages from users
 
 ~user view
